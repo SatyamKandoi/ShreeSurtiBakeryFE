@@ -11,10 +11,40 @@ import { ContactUs } from "./pages/Contact";
 import { Products } from "./pages/Products";
 import { Cakes } from "./pages/Cakes";
 import { FeaturedVideo } from "./components/Featured";
+import { ProductCarousel } from "./components/ProductsCarousel";
 
 function App() {
   const [activeSection, setActiveSection] = useState<Section>("home");
-
+  const birthdayCakes = [
+    {
+      id: 1,
+      name: "Chocolate Delight",
+      category: "Birthday",
+      price: 1200,
+      image: "/Cakes/chocolate-cake.jpg",
+    },
+    {
+      id: 2,
+      name: "Vanilla Bliss",
+      category: "Birthday",
+      price: 1100,
+      image: "/Cakes/vanilla-cake.jpg",
+    },
+    {
+      id: 3,
+      name: "Red Velvet",
+      category: "Birthday",
+      price: 1300,
+      image: "/Cakes/red-velvet.jpg",
+    },
+    {
+      id: 4,
+      name: "Confetti Cake",
+      category: "Birthday",
+      price: 1250,
+      image: "/Cakes/confetti-cake.jpg",
+    },
+  ];
   return (
     <>
       <MegaMenu setActiveSection={setActiveSection} />
@@ -22,6 +52,10 @@ function App() {
         <>
           <HeroCarousel />
           <AboutUs />
+          <ProductCarousel
+            title="Our Cakes Collection"
+            products={birthdayCakes}
+          />
           <ThreadsSection />
           <FeaturedVideo />
           <VisitUs />

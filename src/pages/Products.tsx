@@ -78,7 +78,7 @@ export const Products = () => {
   ];
 
   return (
-    <div className="bg-[#e8dcce] w-full mt-15 font-inter">
+    <div className="bg-[#e8dcce] w-full mt-20 font-inter">
       <ProductCarousel title="Breads" products={breads} />
       <ProductCarousel title="Cakes" products={cakes} />
     </div>
