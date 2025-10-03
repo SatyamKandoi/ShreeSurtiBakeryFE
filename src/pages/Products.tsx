@@ -77,10 +77,59 @@ export const Products = () => {
     },
   ];
 
+  const biscuits = [
+    {
+      id: 11,
+      name: "Dry Fruit Biscuits",
+      category: "biscuits",
+      price: 70,
+      image: "/Products/Biscuits/DryFruits.jpg",
+    },
+    {
+      id: 16,
+      name: "Mix Biscuits",
+      category: "biscuits",
+      price: 100,
+      image: "/Products/Biscuits/Mix_Biscuits.jpg",
+    },
+    {
+      id: 15,
+      name: "Nankhatai",
+      category: "biscuits",
+      price: 50,
+      image: "/Products/Biscuits/Nankhatai.jpg",
+    },
+    {
+      id: 14,
+      name: "Chocolate Biscuits",
+      category: "biscuits",
+      price: 70,
+      image: "/Products/Biscuits/Chocolate.jpg",
+    },
+    {
+      id: 12,
+      name: "Toasts",
+      category: "biscuits",
+      price: 50,
+      image: "/Products/Biscuits/Toasts.jpg",
+    },
+    {
+      id: 13,
+      name: "Khari",
+      category: "biscuits",
+      price: 50,
+      image: "/Products/Biscuits/Khari.jpg",
+    },
+  ];
+
   return (
     <div className="bg-[#e8dcce] w-full mt-20 font-inter">
       <ProductCarousel title="Breads" products={breads} />
       <ProductCarousel title="Cakes" products={cakes} />
+      <ProductCarousel
+        title="Biscuits and other Products"
+        products={biscuits}
+      />
     </div>
   );
 };

@@ -1,0 +1,44 @@
+/* Bakery-themed scrollbar - only visible on mobile */
+.bakery-scrollbar::-webkit-scrollbar {
+  height: 8px; /* Horizontal scrollbar height */
+}
+
+.bakery-scrollbar::-webkit-scrollbar-track {
+  background: #f5e6d8; /* Soft cream background */
+  border-radius: 9999px; /* Fully rounded */
+}
+
+.bakery-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    #663d34,
+    #8b5e3c
+  ); /* Brown gradient matching your buttons */
+  border-radius: 9999px;
+}
+
+.bakery-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    90deg,
+    #8b5e3c,
+    #663d34
+  ); /* Reversed brown gradient on hover */
+}
+
+/* Firefox scrollbar styling */
+.bakery-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #663d34 #f5e6d8;
+}
+
+/* Hide scrollbar on desktop (screens larger than 768px) */
+@media (min-width: 768px) {
+  .bakery-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bakery-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+}
