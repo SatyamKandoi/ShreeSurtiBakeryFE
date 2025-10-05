@@ -412,6 +412,11 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
     `;
     document.head.appendChild(printStyles);
 
+    // Apply ID to invoice content for print targeting
+    if (invoiceRef.current) {
+      invoiceRef.current.id = "invoice-content";
+    }
+
     // Trigger browser print dialog
     window.print();
   };
