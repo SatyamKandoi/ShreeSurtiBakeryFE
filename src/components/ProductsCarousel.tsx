@@ -173,6 +173,14 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
   const carouselProducts = [...products, ...products];
 
   useEffect(() => {
+    // Only run on mobile devices (simple check)
+    const isMobile =
+      typeof window !== "undefined" &&
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    if (!isMobile) return;
+
     const el = scrollRef.current;
     if (!el) return;
 
@@ -436,18 +444,18 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
           {/* Arrows */}
           <button
             onClick={() => scrollBy(-350)}
-            className="md:flex absolute -left-4 top-1/2 -translate-y-1/2 text-2xl shadow-md rounded-full z-10 hover:scale-110 transition-transform"
+            className="hidden md:flex items-center justify-center absolute -left-6 top-1/2 -translate-y-1/2 bg-white/90 text-[#663D34] border border-[#e8d8c2] shadow-lg rounded-full w-12 h-12 z-20 hover:bg-[#663D34] hover:text-white hover:scale-110 transition-all duration-200"
             aria-label="Scroll left"
           >
-            &#8592;
+            <span className="text-3xl">&#8592;</span>
           </button>
 
           <button
             onClick={() => scrollBy(350)}
-            className="md:flex absolute -right-4 top-1/2 -translate-y-1/2 text-2xl shadow-md rounded-full z-10 hover:scale-110 transition-transform"
+            className="hidden md:flex items-center justify-center absolute -right-6 top-1/2 -translate-y-1/2 bg-white/90 text-[#663D34] border border-[#e8d8c2] shadow-lg rounded-full w-12 h-12 z-20 hover:bg-[#663D34] hover:text-white hover:scale-110 transition-all duration-200"
             aria-label="Scroll right"
           >
-            &#8594;
+            <span className="text-3xl">&#8594;</span>
           </button>
 
           <div
@@ -494,9 +502,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
                         isProcessingPayment(product.id) ? "opacity-70" : ""
                       }`}
                     >
-                      {isProcessingPayment(product.id)
-                        ? "Processing..."
-                        : "Buy Now"}
+                      Buy Now
                     </button>
                     <button className="bg-[#663D34] text-[#FFFEE5] rounded-full font-semibold px-4 py-2 text-sm lg:text-base transition-shadow shadow-md cursor-pointer">
                       Add to Cart
