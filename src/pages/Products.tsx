@@ -97,7 +97,7 @@ export const Products = () => {
       name: "Nankhatai",
       category: "biscuits",
       price: 50,
-      image: "/Products/Biscuits/Nankhatai.jpg",
+      image: "/Products/Biscuits/Nankhatai.png",
     },
     {
       id: 14,
@@ -124,12 +124,12 @@ export const Products = () => {
 
   return (
     <div className="bg-[#e8dcce] w-full mt-20 font-inter">
-      <ProductCarousel title="Breads" products={breads} />
-      <ProductCarousel title="Cakes" products={cakes} />
       <ProductCarousel
         title="Biscuits and other Products"
         products={biscuits}
       />
+      <ProductCarousel title="Breads" products={breads} />
+      <ProductCarousel title="Cakes" products={cakes} />
     </div>
   );
 };

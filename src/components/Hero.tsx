@@ -3,14 +3,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const images = [
   {
-    src: "/bread.jpg",
-    caption: "Buttery Biscuits, Freshly Baked Every Morning",
-  },
-  {
-    src: "/cookies.jpg",
-    caption: "Delicate Cookies for Sweet Moments",
-  },
-  {
     src: "/Cakes-1.jpg",
     caption: "Delicious Cakes – Freshly Made with Love",
   },
